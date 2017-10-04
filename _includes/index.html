@@ -1,0 +1,10 @@
+{%if page.description %}
+<div class="description">{{page.description|markdownify}}</div>
+{%endif%}
+<ul class="stories">
+	{%for node in site.pages%}
+		{%if node.url contains page.url and page.url != node.url%}
+			<li class="h3"><a class="list-group-item" href="{{ site.baseurl }}{{node.url}}">{{node.title}}</a></li>
+		{%endif%}
+	{%endfor%}
+</ul>
