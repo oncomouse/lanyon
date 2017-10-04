@@ -1,0 +1,76 @@
+---
+---
+$theme-colors: (
+	"theme-base-08": (
+		color: #ac4142,
+		lighten-value: 45%
+	),
+	"theme-base-09": (
+		color: #d28445,
+		lighten-value: 39%
+	),
+	"theme-base-0a": (
+		color: #f4bf75,
+		lighten-value: 26%
+	),
+	"theme-base-0b": (
+		color: #90a959,
+		lighten-value: 45%
+	),
+	"theme-base-0c": (
+		color: #75b5aa,
+		lighten-value: 38%
+	),
+	"theme-base-0d": (
+		color: #6a9fb5,
+		lighten-value: 39%
+	),
+	"theme-base-0e": (
+		color: #aa759f,
+		lighten-value: 39%
+	),
+	"theme-base-0f": (
+		color: #8f5536,
+		lighten-value: 52%
+	)
+);
+.description {
+	margin: {
+		top: 2rem;
+		bottom: 2rem;
+	}
+}
+ul.stories {
+	padding: 0;
+	border: 1px solid lighten(#313131,55%);
+	border-radius: 2px;
+}
+ul.stories li {
+	list-style: none;
+	font-family: "PT Sans", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	color: #313131;
+	letter-spacing: -.025rem;
+	font-size: 1.5rem;
+	line-height: 1.25;
+	text-rendering: optimizeLegibility;
+	border-top: 1px solid lighten(#313131,55%);
+	&:first-child {
+		border-top: 0;
+	}
+}
+ul.stories a {
+	display: block;
+	padding: 0.45rem;
+	&:hover {
+		text-decoration: none;
+		background: lighten(#268bd2, 45%);
+	}
+}
+@each $class, $theme-map in $theme-colors {
+	$color: map-get($theme-map, "color");
+	$value: map-get($theme-map, "lighten-value");
+	body.#{$class} ul.stories a:hover {
+		background: lighten($color, $value);
+	}
+}
