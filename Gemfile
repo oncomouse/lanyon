@@ -5,3 +5,4 @@ git_source(:github) { |name| "https://github.com/#{name}.git" }
 
 gem "jekyll"
 gem "jekyll-paginate"
+gem "kramdown"
